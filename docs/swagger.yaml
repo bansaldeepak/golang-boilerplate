@@ -1,0 +1,25 @@
+info:
+  contact: {}
+paths:
+  /health/status:
+    get:
+      consumes:
+      - application/json
+      description: Get the health status of the service
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get the health status of the service
+      tags:
+      - health
+swagger: "2.0"

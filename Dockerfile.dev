@@ -1,0 +1,22 @@
+# Use an official Golang runtime as a parent image
+FROM golang:1.22.2
+
+# Set the working directory
+WORKDIR /app
+
+# Copy go.mod and go.sum files
+COPY go.mod go.sum ./
+
+# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
+RUN go mod download
+
+# Copy the source code into the container
+COPY . .
+
+# Set default port and allow it to be overridden by an environment variable
+ARG APP_PORT=8080
+ENV APP_PORT=${APP_PORT}
+EXPOSE ${APP_PORT}
+
+# Start the application
+CMD ["sh", "-c", "go run main.go"]

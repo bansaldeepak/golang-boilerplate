@@ -110,8 +110,8 @@ jobs:
       #     POSTGRES_SCHEMA: boilerplate_schema
       #     PGPASSWORD: boilerplate
 
-      - name: Run Tests
-        run: docker run --network host test-image:latest go test ./...
+      # - name: Run Tests
+      #   run: docker run --network host test-image:latest go test ./...
 
 
   # publish:

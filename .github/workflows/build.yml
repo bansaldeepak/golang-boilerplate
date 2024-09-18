@@ -101,14 +101,14 @@ jobs:
       # - name: Run Tests
       #   run: go test ./..
 
-      - name: Run Database Migrations
-        run: docker run --network host test-image:latest bash scripts/run_migrations.sh
-        env:
-          POSTGRES_USER: boilerplate
-          POSTGRES_PASSWORD: boilerplate
-          POSTGRES_DB: boilerplate
-          POSTGRES_SCHEMA: boilerplate_schema
-          PGPASSWORD: boilerplate
+      # - name: Run Database Migrations
+      #   run: docker run --network host test-image:latest bash scripts/run_migrations.sh
+      #   env:
+      #     POSTGRES_USER: boilerplate
+      #     POSTGRES_PASSWORD: boilerplate
+      #     POSTGRES_DB: boilerplate
+      #     POSTGRES_SCHEMA: boilerplate_schema
+      #     PGPASSWORD: boilerplate
 
       - name: Run Tests
         run: docker run --network host test-image:latest go test ./...

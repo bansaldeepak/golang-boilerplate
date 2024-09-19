@@ -6,24 +6,26 @@ import (
 )
 
 type Config struct {
-	DBHost      string
-	DBUser      string
-	DBPassword  string
-	DBName      string
-	DBPort      string
-	AppPort     string
-	Environment string
+	DBHost         string
+	DBUser         string
+	DBPassword     string
+	DBName         string
+	DBPort         string
+	AppPort        string
+	AppEnvironment string
+	AppName        string
 }
 
 func LoadConfig() Config {
 	return Config{
-		DBHost:      getEnv("DB_HOST", ""),
-		DBUser:      getEnv("DB_USER", ""),
-		DBPassword:  getEnv("DB_PASSWORD", ""),
-		DBName:      getEnv("DB_NAME", ""),
-		DBPort:      getEnv("DB_PORT", ""),
-		AppPort:     getEnv("APP_PORT", ""),
-		Environment: getEnv("ENVIRONMENT", ""),
+		DBHost:         getEnv("POSTGRES_HOST", ""),
+		DBUser:         getEnv("POSTGRES_USER", ""),
+		DBPassword:     getEnv("POSTGRES_PASSWORD", ""),
+		DBName:         getEnv("POSTGRES_NAME", ""),
+		DBPort:         getEnv("POSTGRES_PORT", ""),
+		AppPort:        getEnv("APP_PORT", ""),
+		AppEnvironment: getEnv("APP_ENVIRONMENT", ""),
+		AppName:        getEnv("APP_NAME", ""),
 	}
 }
 

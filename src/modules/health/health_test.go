@@ -1,6 +1,7 @@
 package health
 
 import (
+	"golang-boilerplate/test"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -8,6 +9,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 )
+
+func TestMain(m *testing.M) {
+	test.TestMain(m) // Call the global TestMain from setup.go
+}
 
 func TestGetStatus(t *testing.T) {
 	// Set up Gin router

@@ -36,7 +36,7 @@ func GetDB() *gorm.DB {
 }
 
 func InitDB(cfg environment.Config, models ...interface{}) {
-	if cfg.Environment == "development" {
+	if cfg.AppEnvironment == "test" || cfg.AppEnvironment == "development" {
 		sugar.Info("Initializing database...")
 		err := db.AutoMigrate(models...)
 		if err != nil {

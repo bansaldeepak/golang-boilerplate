@@ -100,3 +100,29 @@ gofmt -w .
 ## Contributing
 
 Feel free to submit issues, fork the repository and send pull requests!
+
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Go (1.16+)
+- PostgreSQL
+- Git
+- Go tools:
+    ```sh
+    go install golang.org/x/tools/cmd/goimports@latest
+    go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+    go install golang.org/x/lint/golint@latest
+    ```
+
+// ... existing code ...
+
+## Install Below Packages to make scripts work
+
+// Removed duplicate goimports installation
+go install golang.org/x/tools/cmd/goimports@latest
+go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+go install golang.org/x/lint/golint@latest

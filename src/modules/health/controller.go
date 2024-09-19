@@ -32,5 +32,8 @@ func (ctrl *HealthController) GetStatus(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"database_status": status, "http_status": http.StatusOK})
+	c.JSON(
+		http.StatusOK,
+		gin.H{"database_status": status, "http_status": http.StatusOK},
+	)
 }
